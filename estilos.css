@@ -1,0 +1,61 @@
+h1 {
+    font-size: 2rem;
+    font-weight: 1500;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+a {
+    font-size: 2rem;
+    text-align: center;
+}
+p {
+    font-size: 2rem;
+    text-align: center;
+}
+section {
+    margin: 0 auto;
+    max-width: 70em;
+    width: 100%;
+}
+.grilla {
+   display: grid;
+   gap: 3em;
+   grid-template-columns: 1fr 1fr;
+   text-align: center;
+   align-items: center;
+   align-content: center;
+}
+
+.intro .grilla {
+    background-color: violet;
+    border-radius: 2em;
+    padding: 2em;
+    text-align: center;
+}
+
+.self-img {
+    border-radius: 1em;   
+}
+
+.menu-opciones {
+    text-align: center;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+    table-layout: fixed;
+    align-items: center;
+    max-width: 20em;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid gray;  
+}
+
+td, tr {
+    border: 3px solid gray;
+    padding: 4px;
+}
