@@ -65,11 +65,11 @@
                 </tr>
                 <tr>
                     <td>Flow</td>
-                    <td>Pago</td>
+                    <td>Pago dep</td>
                 </tr>
                 <tr>
                     <td>Rada Tilly</td>
-                    <td></td>
+                    <td>Pago</td>
                 </tr>      
             </table>
         </div>  
@@ -81,6 +81,31 @@
             <a href="index.html">Back</a>
         </div>
         
+    </section>
+
+    <section>
+        <?php
+
+            // Ruta
+
+            $rutaArchivo = "pagos.csv";
+
+            if (($archivo = fopen($rutaArchivo, "r")) ==! false) {
+                echo "<table>";
+                while (($datos = fgetcsv($archivo, 1000, ";")) !== false) {
+                    echo "<tr>";
+                    foreach ($datos as $key => $dato) {
+                    echo "<td>$dato</td>";
+                }
+                echo "</tr>";
+            }
+            fclose($archivo);
+            echo "</table>";
+            } else {
+            echo "No hay tabla";
+            }
+
+        ?>
     </section>
     
 </body>
