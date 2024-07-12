@@ -31,6 +31,8 @@ name = st.text_input('', "Type Here ...")
 if(st.button('Submit')):
     result = name.title()
     st.success(result)
+    df.loc[0:0,'Direccion'] = result
+    df.to_csv('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop_2.csv')
 
 # Selection box
  
