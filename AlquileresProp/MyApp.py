@@ -14,7 +14,7 @@ Hello *world!*
 
 st.title('Hello GeekFolks')
  
-df = pd.read_csv('https://raw.githubusercontent.com/SELF-msselve/EF-Python/main/50-WEBStreamlit/prop.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop.csv')
 #st.line_chart(df)
 df2 = df.loc[:,['Direccion','Lugar']]
 st.write(df2.style.hide())
