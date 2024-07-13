@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 
  
-#df = pd.read_csv('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop.xlsx')
-df = pd.read_excel('prop.xlsx')
+df = pd.read_csv('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop.xlsx')
+#df = pd.read_excel('prop.xlsx')
 
 # Configurar la página
 st.set_page_config(
