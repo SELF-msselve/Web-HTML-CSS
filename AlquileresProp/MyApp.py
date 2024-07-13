@@ -45,13 +45,10 @@ df_columns = df.columns
 for index, row in df.iterrows():
     my_expander = st.expander(row['Direccion'], expanded=False)
     with my_expander:
-        col1, col2 = st.columns([1,1])
+        #col1, col2 = st.columns([1,1])
         contador = 0
         for items in row:
-            with col1:
-                st.write(df_columns[contador], ':')
-            with col2:    
-                st.write(items)
+            st.write(df_columns[contador], ': ', items)
             contador += 1
 
 
