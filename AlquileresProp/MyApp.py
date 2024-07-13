@@ -4,7 +4,7 @@ import pandas as pd
  
 df = pd.read_csv('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop.csv')
 #df = pd.read_excel('prop.xlsx')
-
+print(df)
 # Configurar la página
 st.set_page_config(
     page_title="SELF Propiedades",  # Título de la pestaña del navegador
