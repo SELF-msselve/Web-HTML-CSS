@@ -23,6 +23,15 @@ header {visibility: hidden;}
 .stApp {
     top: 0px;
 }
+
+/* Asegúrate de que la página esté bien escalada en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
