@@ -1,16 +1,17 @@
-Unnamed: 0,Num,Direccion,UF,Lugar,Precio,Actualizacion,Pagos
-0,1,Suipacha 221,UF-12,Coch -3,$25.000,Ago-24,True
-1,2,Suipacha 221,UF-57,Coch -3,Nosotros,Nosotros,True
-2,3,Suipacha 221,UF-105,Coch -2,$25.000,Ago-24,True
-3,4,Suipacha 221,UF-271,7B,$179.000,Ago-24,True
-4,5,Suipacha 221,UF-277,8I,$267.000,Abr-25,True
-5,6,suipacha 644,UF-3,PB D,$150.000,Ago-24,True
-6,7,suipacha 644,UF-18,4C,$163.000,Feb-25,False
-7,8,suipacha 644,UF-21,5D,$133.000,Fin Oct-24,True
-8,9,San Martin,Pelotero,PT,$130.000,Ago-24,False
-9,10,Alem,Gringo,PT,$70.000,Jun-24,False
-10,11,Alem,Local,PT,$,Alquiler,False
-11,12,Alem,Depto,PT,$170.000,Fin Abr-25,False
-12,13,Alem,Esquina,PT,$150.000,Ago-24,False
-13,14,Alem,Anexo,PT,$134.000,Ago-24,False
-14,15,Moyano,Local,RT,$290.000,Jul-24,False
+﻿Num;Direccion;UF;Inquilino;Alquiler;Estado;Actualizacion;Pagos
+1;Suipacha 221  Coch -3;UF-12;Coch -3;25.000;Actualizacion;Aug-24;True
+2;Suipacha 221  Coch -3;UF-57;Nosotros;0;;Nosotros;True
+3;Suipacha 221  Coch -2;UF-105;Coch -2;25.000;Actualizacion;Aug-24;True
+4;Suipacha 221  7 B;UF-271;Fito;179.000;Actualizacion;Aug-24;True
+5;Suipacha 221  8 I;UF-277;Chino;267.000;Actualizacion;Apr-25;True
+6;Suipacha 221  24 A;;24 A;;;Para Alquilar;
+7;suipacha 644  PB D;UF-3;Gustavo;150.000;Actualizacion;Aug-24;True
+8;suipacha 644  4C;UF-18;Alvarenga;163.000;Actualizacion;Feb-25;False
+9;suipacha 644  5D;UF-21;Molina;133.000;Fin Contrato;Oct-24;True
+10;San Martin  Pelotero;Pelotero;PT;130.000;Actualizacion;Aug-24;False
+11;Alem  Gringo;Gringo;PT;100.000;Actualizacion;Jun-24;False
+12;Alem  Local;Local;PT;400.000;Actualizacion;Para Alquilar;False
+13;Alem  Depto;Depto;PT;170.000;Fin Contrato;Apr-25;False
+14;Alem  Esquina;Esquina;PT;150.000;Actualizacion;Aug-24;False
+15;Alem  Peluqueria;Peluqueria;PT;134.000;Actualizacion;Aug-24;False
+16;Moyano  Local;Local;RT;290.000;Actualizacion;Jul-24;False
