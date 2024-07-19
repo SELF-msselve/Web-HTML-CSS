@@ -1,0 +1,6 @@
+streamlit
+pandas
+pandas-datareader
+sqlalchemy
+streamlit-option-menu
+openpyxl
