@@ -38,8 +38,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Contenido de la aplicación
 st.title("SELF Propiedades")
-# st.sidebar.title("Menú Lateral")
-# st.write("Esta es una aplicación de ejemplo usando Streamlit.")
+#st.sidebar.title("Menú Lateral")
+#st.write("Esta es una aplicación de ejemplo usando Streamlit.")
 
 df_columns = df.columns
 for index, row in df.iterrows():

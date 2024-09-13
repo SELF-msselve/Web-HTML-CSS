@@ -5,8 +5,8 @@ df = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/
 #df = pd.read_excel('prop.xlsx')
 
 # Aplicación Streamlit
-st.title('SELF Propiedades')
-st.sidebar.title('Propiedades')
+#st.title('SELF Propiedades')
+#st.sidebar.title('Propiedades')
     
 # Barra lateral con menú desplegable
 selected_value = st.sidebar.selectbox('Selecciona Propiedad:', df['Direccion'])
