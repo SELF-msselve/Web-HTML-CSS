@@ -4,3 +4,5 @@ pandas-datareader
 sqlalchemy
 streamlit-option-menu
 openpyxl
+
+#streamlit run AppName.py
