@@ -3,8 +3,8 @@ import pandas as pd
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
  
-#df = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop.xlsx')
-df = pd.read_excel('prop2.xlsx')
+df = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop2.xlsx')
+#df = pd.read_excel('prop2.xlsx')
 #print(df)
 # Configurar la página
 st.set_page_config(
