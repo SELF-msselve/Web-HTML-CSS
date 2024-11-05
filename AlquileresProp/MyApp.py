@@ -32,8 +32,8 @@ header {visibility: hidden;}
 """ 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-#df = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop2.xlsx')
-df = pd.read_excel('prop2.xlsx')
+df = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/AlquileresProp/prop2.xlsx')
+#df = pd.read_excel('prop2.xlsx')
 encabezados = list(df.columns)
 vence_un_mes = []
 vence_dos_meses = []
@@ -41,7 +41,7 @@ vence_dos_meses = []
 one_month = date.today() + relativedelta(months=+1)
 two_month = date.today() + relativedelta(months=+2)
 
-menu = ['Alquileres', 'Actualizaciones']
+menu = ['Alquileres', 'Actualizaciones', 'Total Alquileres']
 
 def is_date(variable):
     if isinstance(variable, datetime):
@@ -92,13 +92,18 @@ def pagina_1():
 def pagina_2():
     # Contenido de la aplicación
     st.title(':violet[SELF] Propiedades')
-    st.write('*Tocar la direccion para desplegar Info*')
+    st.write('*Proximas Actualizaciones de Alquiler*')
     
     st.title('Vence en 1 mes')
     st.write(df_un_mes.to_html(index=False, header=False), unsafe_allow_html=True)
     
     st.title('Vence en 2 meses')
     st.write(df_dos_meses.to_html(index=False, header=False), unsafe_allow_html=True)
+
+def pagina_3():
+    st.title(':violet[SELF] Propiedades')
+	st.write('*Total de Alquileres*')
+	st.title(df.loc['Alquiler Actual'].sum())
     
 st.sidebar.title('Menú Lateral')
 # Configurar la barra lateral
@@ -109,5 +114,7 @@ if page == menu[0]:
     pagina_1()
 elif page == menu[1]:
     pagina_2()
+elif page == menu[2]:
+    pagina_3()
 
 
