@@ -102,8 +102,9 @@ def pagina_2():
 
 def pagina_3():
     st.title(':violet[SELF] Propiedades')
-	st.write('*Total de Alquileres*')
-	st.title(df.loc['Alquiler Actual'].sum())
+    st.write('*Total de Alquileres*')
+    st.title(df['Alquiler Actual'].sum())
+    #st.title(df.loc[['Alquiler Actual']].sum(axis=1))
     
 st.sidebar.title('Menú Lateral')
 # Configurar la barra lateral
