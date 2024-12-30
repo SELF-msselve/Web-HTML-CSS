@@ -70,12 +70,25 @@ def pagina_1():
     # Contenido de la aplicación
     st.title(':violet[SELF] Propiedades')
     #st.sidebar.title("Menú Lateral")
-    st.write('*Tocar la direccion para desplegar Info*')
+    st.header('*Tocar la direccion para desplegar Info*')
     #st.write("***Hello***, *World!* :sunglasses:")
 
     df_columns = df.columns
     for index, row in df.iterrows():
-        my_expander = st.expander(row['Direccion'], expanded=False)
+        #my_expander = st.expander(row['Direccion'], expanded=False)
+        
+        # Mostrar un encabezado personalizado antes del expansor
+        st.markdown(
+            f"""
+            <p style="font-size:20px; font-weight:bold; margin-bottom:0;">
+                {row['Direccion']}
+            </p>
+            """,
+            unsafe_allow_html=True
+        )
+        # Crear el expansor con un título simple
+        my_expander = st.expander("Detalles", expanded=False)
+        
         with my_expander:
             contador = 0
             for items in row:
@@ -83,10 +96,13 @@ def pagina_1():
                     if items.year == one_month.year and items.month == one_month.month:
                         st.write(':red[**Vence el mes que viene**] :sunglasses:')
                     if items.year == two_month.year and items.month == two_month.month:
-                        st.write(':orange[**Vence en dos meses**]')                
-                    st.write(df_columns[contador], ': ', items.strftime('%m/%Y'))
+                        st.write(':orange[**Vence en dos meses**]')
+                    fecha = items.strftime('%m/%Y')
+                    st.subheader(f'{df_columns[contador]}: {fecha}')                
+                    #st.write(df_columns[contador], ': ', items.strftime('%m/%Y'))
                 else:
-                    st.write(df_columns[contador], ': ', items)
+                    st.subheader(f"{df_columns[contador]}: {items}")
+                    #st.subheader(df_columns[contador], ': ', items)
                 contador += 1
     
 def pagina_2():
@@ -103,7 +119,8 @@ def pagina_2():
 def pagina_3():
     st.title(':violet[SELF] Propiedades')
     st.write('*Total de Alquileres*')
-    st.title(df['Alquiler Actual'].sum())
+    st.title(f"Suma total: {df['Alquiler Actual'].sum():,}".replace(",", "."))
+    #st.title(df['Alquiler Actual'].sum():,)
     #st.title(df.loc[['Alquiler Actual']].sum(axis=1))
     
 st.sidebar.title('Menú Lateral')
