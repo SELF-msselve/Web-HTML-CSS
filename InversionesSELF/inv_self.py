@@ -28,32 +28,24 @@ total_capex = df_empresas_capital['CAPEX'].apply(lambda x: int(x.replace(',', ''
 
 st.title('SELF Inversiones ON')
 
-st.markdown("""
-    <style>
-        .dataframe thead th {
-            position: sticky;
-            top: 0;
-            background: white;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
 # Menú inicial en el encabezado
 menu = st.selectbox('Opciones', ['Intereses Mensuales', 'Intereses Anuales', 'Intereses x Empresa x Mes', 'Intereses mensuales por empresa', 'Capital por empresa'])
 
 if menu == 'Intereses Mensuales':
     st.write('### Intereses Mensuales.')
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-   
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    st.dataframe(df_sum_mes)
+    
 elif menu == 'Intereses Anuales':
     st.write('### Intereses Anuales.')
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_year.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_year.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    st.dataframe(df_sum_year)
+    
 elif menu == 'Intereses x Empresa x Mes':
     st.write('### Intereses x Empresa x Mes.')
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_empresa.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_empresa.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    st.dataframe(df_sum_empresa)
+    
 elif menu == 'Intereses mensuales por empresa':
     # Lista de marcas disponibles
     marcas = df['EMPRESA'].unique()
@@ -66,11 +58,12 @@ elif menu == 'Intereses mensuales por empresa':
 
     # Mostrar los valores mensuales de la marca seleccionada sin índice y con scroll
     st.write(f"### Intereses mensuales para la Empresa: {marca_seleccionada}")
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_filtrado.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_filtrado.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    st.dataframe(df_filtrado)
 elif menu == 'Capital por empresa':
     st.write("### Empresas y Capital Invertido:")
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_empresas_capital.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_empresas_capital.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    st.dataframe(df_empresas_capital)
     
     # Mostrar el total de CAPEX formateado con separadores de miles
     st.write(f"### Total CAPEX: {total_capex:,.0f}")
