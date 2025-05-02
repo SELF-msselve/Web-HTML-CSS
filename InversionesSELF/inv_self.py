@@ -1,6 +1,36 @@
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(
+    page_title="SELF Inversiones ON",  # Título de la pestaña del navegador
+    page_icon=":smiley:",  # Icono de la pestaña del navegador (puede ser un emoji o una ruta a una imagen)
+    layout="centered",  # Otras opciones son 'centered'
+    initial_sidebar_state="collapsed", # Estado inicial de la barra lateral ('collapsed' o 'expanded'))
+)
+
+# CSS para ocultar los menús y el pie de página de Streamlit
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.stApp {
+    top: 0px;
+}
+
+/* Asegúrate de que la página esté bien escalada en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+</style>
+""" 
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 df_raw = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/InversionesSELF/Inversiones.xlsx', sheet_name='TABLA')
 
 #df_raw = pd.read_excel('inversiones.xlsx', sheet_name='TABLA')
@@ -28,7 +58,7 @@ df_empresas_capital['CAPEX'] = df_empresas_capital['CAPEX'].apply(lambda x: f"{x
 # Calcular el total de CAPEX
 total_capex = df_empresas_capital['CAPEX'].apply(lambda x: int(x.replace(',', ''))).sum()
 
-st.title('SELF Inversiones ON')
+#st.title('SELF Inversiones ON')
 
 # Menú inicial en el encabezado
 menu = st.selectbox('Opciones', ['Intereses Mensuales', 'Intereses Anuales', 'Intereses x Empresa x Mes', 'Intereses mensuales por empresa', 'Capital por empresa'])
