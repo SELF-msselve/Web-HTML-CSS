@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-df_raw = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/InversionesSELF/Inversiones.xlsx')
+df_raw = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/InversionesSELF/Inversiones.xlsx', sheet_name='TABLA')
 
 #df_raw = pd.read_excel('inversiones.xlsx', sheet_name='TABLA')
 
