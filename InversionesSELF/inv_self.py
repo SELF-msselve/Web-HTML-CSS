@@ -58,7 +58,7 @@ df_empresas_capital['CAPEX'] = df_empresas_capital['CAPEX'].apply(lambda x: f"{x
 # Calcular el total de CAPEX
 total_capex = df_empresas_capital['CAPEX'].apply(lambda x: int(x.replace(',', ''))).sum()
 
-st.title('SELF Inversiones ON')
+st.title(':violet[SELF] Inversiones ON')
 
 # Menú inicial en el encabezado
 menu = st.selectbox('Opciones', ['Intereses Mensuales', 'Intereses Anuales', 'Intereses x Empresa x Mes', 'Intereses mensuales por empresa', 'Capital por empresa'])
