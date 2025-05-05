@@ -28,16 +28,16 @@ header {visibility: hidden;}
 
 /* Agrandar el tamaño de la letra en st.dataframe */
 div[data-testid="stDataFrame"] {
-    font-size: 20px;
+    font-size: 50px;
 
 </style>
 """ 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-#df_raw = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/InversionesSELF/Inversiones.xlsx', sheet_name='TABLA')
+df_raw = pd.read_excel('https://raw.githubusercontent.com/SELF-msselve/Web-HTML-CSS/main/InversionesSELF/Inversiones.xlsx', sheet_name='TABLA')
 
-df_raw = pd.read_excel('inversiones.xlsx', sheet_name='TABLA')
+#df_raw = pd.read_excel('inversiones.xlsx', sheet_name='TABLA')
 
 df_raw['FECHA'] = pd.to_datetime(df_raw['FECHA'], format='%d/%m/%Y')
 
@@ -69,8 +69,10 @@ menu = st.selectbox('Opciones', ['Intereses Mensuales', 'Intereses Anuales', 'In
 
 if menu == 'Intereses Mensuales':
     st.write('### Intereses Mensuales.')
-    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-    st.dataframe(df_sum_mes)
+    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    #st.markdown(df_sum_mes.to_html(index=False), unsafe_allow_html=True)
+
+    #st.dataframe(df_sum_mes)
     
 elif menu == 'Intereses Anuales':
     st.write('### Intereses Anuales.')
