@@ -18,17 +18,17 @@ header {visibility: hidden;}
     top: 0px;
 }
 
-/* Asegúrate de que la página esté bien escalada en dispositivos móviles */
+/* Asegúrate de que la página esté bien escalada en dispositivos móviles
 @media only screen and (max-width: 600px) {
     .block-container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-}
+}  */
 
 /* Agrandar el tamaño de la letra en st.dataframe */
 div[data-testid="stDataFrame"] {
-    font-size: 50px;
+    font-size: 50px; */
 
 </style>
 """ 
@@ -69,15 +69,25 @@ menu = st.selectbox('Opciones', ['Intereses Mensuales', 'Intereses Anuales', 'In
 
 if menu == 'Intereses Mensuales':
     st.write('### Intereses Mensuales.')
-    st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
+    #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_mes.to_html(index=False)}</div></div>', unsafe_allow_html=True)
     #st.markdown(df_sum_mes.to_html(index=False), unsafe_allow_html=True)
-
-    #st.dataframe(df_sum_mes)
+    #st.table(df_sum_mes)
+    st.dataframe(
+        df_sum_mes,
+        width=30, height=300, use_container_width=True,
+        column_config={
+            "INTERES": st.column_config.NumberColumn(
+                "Interes ($)",
+                help="Intereses ganados en el mes",
+                format="$%d",
+            )
+        })
     
 elif menu == 'Intereses Anuales':
     st.write('### Intereses Anuales.')
     #st.markdown(f'<div style="display:flex;justify-content:center;height:400px;overflow:auto;margin-bottom:20px;"><div style="width:90%;">{df_sum_year.to_html(index=False)}</div></div>', unsafe_allow_html=True)
-    st.dataframe(df_sum_year)
+    st.data_editor(df_sum_year)
+    #st.dataframe(df_sum_year)
     
 elif menu == 'Intereses x Empresa x Mes':
     st.write('### Intereses x Empresa x Mes.')
