@@ -1,0 +1,46 @@
+st.dataframe es una función de Streamlit que te permite mostrar un DataFrame de pandas en tu aplicación web. Aquí tienes una explicación de cada uno de sus parámetros:
+
+data: El DataFrame de pandas que quieres mostrar. Este es el único parámetro obligatorio.
+width: Ancho del DataFrame en píxeles. Si no se especifica, se ajusta automáticamente.
+height: Altura del DataFrame en píxeles. Si no se especifica, se ajusta automáticamente.
+use_container_width: Si se establece en True, el DataFrame ocupará todo el ancho del contenedor.
+hide_index: Si se establece en True, se oculta la columna de índice del DataFrame.
+column_order: Una lista de nombres de columnas que define el orden en que se mostrarán las columnas.
+column_config: Un diccionario que permite configurar las columnas individualmente (por ejemplo, cambiar el nombre de la columna).
+key: Una clave única para el widget. Útil para mantener el estado del widget entre redibujos.
+on_select: Define el comportamiento cuando se seleccionan filas. Puede ser "ignore" (ignorar la selección) o "single-row" (selección de una sola fila) o "multi-row" (selección de múltiples filas).
+selection_mode: Define el modo de selección de filas. Puede ser "single-row" o "multi-row".
+row_height: Altura de las filas en píxeles.
+
+
+import pandas as pd
+import streamlit as st
+
+# Crear un DataFrame de ejemplo
+data = {
+    'Nombre': ['Alice', 'Bob', 'Charlie'],
+    'Edad': [24, 27, 22],
+    'Ciudad': ['New York', 'San Francisco', 'Los Angeles']
+}
+df = pd.DataFrame(data)
+
+# Mostrar el DataFrame en Streamlit
+st.dataframe(df, width=500, height=300, use_container_width=True, hide_index=True)
+
+
+st.data_editor es una función de Streamlit que te permite mostrar y editar un DataFrame de pandas en tu aplicación web. Aquí tienes una explicación de cada uno de sus parámetros:
+
+data: El DataFrame de pandas que quieres mostrar y editar. Este es el único parámetro obligatorio.
+width: Ancho del editor de datos en píxeles. Si no se especifica, se ajusta automáticamente.
+height: Altura del editor de datos en píxeles. Si no se especifica, se ajusta automáticamente.
+use_container_width: Si se establece en True, el editor de datos ocupará todo el ancho del contenedor.
+hide_index: Si se establece en True, se oculta la columna de índice del DataFrame.
+column_order: Una lista de nombres de columnas que define el orden en que se mostrarán las columnas.
+column_config: Un diccionario que permite configurar las columnas individualmente (por ejemplo, cambiar el nombre de la columna).
+num_rows: Define el número de filas que se mostrarán. Puede ser "fixed" (número fijo de filas) o "dynamic" (número dinámico de filas).
+disabled: Si se establece en True, el editor de datos estará deshabilitado y no se podrán realizar cambios.
+key: Una clave única para el widget. Útil para mantener el estado del widget entre redibujos.
+on_change: Una función que se llamará cuando se realicen cambios en el editor de datos.
+args: Argumentos adicionales para la función on_change.
+kwargs: Argumentos adicionales para la función on_change.
+row_height: Altura de las filas en píxeles.
