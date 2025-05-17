@@ -1,17 +1,21 @@
 import streamlit as st
+import pandas as pd
 
-def vote(item):
-    st.write(f"Why is {item} your favorite?")
-    reason = st.text_input("Because...")
-    if st.button("Submit"):
-        st.session_state.vote = {"item": item, "reason": reason}
-        st.experimental_rerun()
+# Título de la aplicación
+st.title("Visor de archivos Excel")
 
-if "vote" not in st.session_state:
-    st.write("Vote for your favorite")
-    if st.button("A"):
-        vote("A")
-    if st.button("B"):
-        vote("B")
-else:
-    st.write(f"You voted for {st.session_state.vote['item']} because {st.session_state.vote['reason']}")
+# Subida del archivo
+archivo_excel = st.file_uploader("Selecciona un archivo Excel", type=["xlsx", "xls"])
+
+# Verifica si se ha subido un archivo
+if archivo_excel is not None:
+    try:
+        # Carga el archivo en un DataFrame
+        df = pd.read_excel(archivo_excel)
+
+        # Muestra el DataFrame
+        st.subheader("Contenido del archivo:")
+        st.dataframe(df)
+    except Exception as e:
+        st.error(f"Ocurrió un error al leer el archivo: {e}")
+
